@@ -104,7 +104,7 @@ public class MyLinkedList {
      */
     public int get(int position) {
         IntNode node = head;
-        //move the number of tuimes
+        //move the number of times
         for (int i = 0; i < position; i++) {
             node = node.getNext();
         }

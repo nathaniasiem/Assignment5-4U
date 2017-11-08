@@ -21,6 +21,16 @@ public class OrderedList {
     public boolean isEmpty() {
         return numItems == 0;
     }
+    
+    public int get(int position) {
+        IntNode1 node = head;
+        //move the number of times
+        for (int i = 0; i < position; i++) {
+            node = node.getNext();
+        }
+        return node.getNum();
+
+    }
 
     public void add(int num) {
         //begins from the top of the list
