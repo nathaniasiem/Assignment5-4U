@@ -12,31 +12,35 @@ public class OrderedList {
 
     private IntNode1 head;
     private int numItems;
-/**
- * identifies the start of the list
- */
+
+    /**
+     * identifies the start of the list
+     */
     public OrderedList() {
         head = null;
         numItems = 0;
     }
-/**
- * 
- * @return the number of items at the start
- */
+
+    /**
+     *
+     * @return the number of items at the start
+     */
     public boolean isEmpty() {
         return numItems == 0;
     }
+
     /**
-     * 
-     * @return  the number of items in the list
+     *
+     * @return the number of items in the list
      */
     public int size() {
         return numItems;
     }
+
     /**
-     * 
+     *
      * @param position
-     * @return 
+     * @return
      */
     public int get(int position) {
         IntNode1 node = head;
@@ -47,10 +51,10 @@ public class OrderedList {
         return node.getNum();
 
     }
-    
+
     /**
-     * 
-     * @param num 
+     *
+     * @param num
      */
     public void add(int num) {
         //begins from the top of the list
@@ -74,5 +78,11 @@ public class OrderedList {
         }
         //increase the size counter
         numItems++;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
     }
 }
