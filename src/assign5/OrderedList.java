@@ -63,7 +63,9 @@ public class OrderedList {
         if (node == null) {
             IntNode1 temp = new IntNode1(num);
             head = temp;
-        } else {
+        } else if (num< head.getNum()){
+            head.setNext(node);
+        }
             //travel to the end
             while (node.getNext() != null) {
                 //travel to the next node
@@ -74,9 +76,11 @@ public class OrderedList {
             IntNode1 temp = new IntNode1(num);
             //insert it into the list
             node.setNext(temp);
+           //increase the size counter 
+            numItems++;
         }
-        //increase the size counter
-        numItems++;
+        
+        
     }
 
     /**
