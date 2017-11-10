@@ -40,7 +40,7 @@ public class OrderedList {
     /**
      *
      * @param position
-     * @return
+     * @return the number in the specific position on the list
      */
     public int get(int position) {
         IntNode1 node = head;
@@ -56,11 +56,10 @@ public class OrderedList {
      *
      * @param num
      */
-    public void add(int num) {
-        //begins from the top of the list
+     public void add(int num) {
+        //start at beginning of list
         IntNode1 node = head;
         //check to see if there is the first item
-        //then sets 
         if (node == null) {
             IntNode1 temp = new IntNode1(num);
             head = temp;
@@ -84,5 +83,11 @@ public class OrderedList {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //testing
+        OrderedList tList = new OrderedList();
+        tList.add(16);
+        for (int i = 0; i < tList.size(); i++) {
+            System.out.println(tList.get(i));
+        }
     }
 }
