@@ -141,7 +141,7 @@ public class OrderedList {
         test.add(20);
         test.add(1);
         test.add(4);
-        test.remove(4);
+
         for(int i =0;i<test.size()+1;i++){
             System.out.println(test.get(i));
         }

@@ -24,30 +24,26 @@ public class A5Q3 {
         public boolean inLang(String word){
             //use a for loop to go through each letter
              for (int i = 0; i < word.length(); i++) {
-            //when there is space to 
-            if (numItems < letters.length) {
-                //increase number of letters in the stack
+            if(numItems<word.length()){
+                numItems++;
+                letters[i]=word.charAt(i);
+            }else{
+                char[] temp = new char[letters.length*2];
+                for (int j = 0; j < letters.length; j++) {
+                    temp[j] = letters[j];
+                }
+                //Make the temp array equal the original array
+                letters = temp;
                 letters[i] = word.charAt(i);
                 numItems++;
-        }
-             //Check if there is a dollar sign in the middle of the word
-        if (letters[(numItems - 1) / 2] == '$') {
-            //go thought hte positions of the array
-            for (int i = 0; word.length >= i; i++) {
-                //Break through the loop if the chars on each side of the word closing in, doesnt equal zero 
-                if (letters[i] != letters[(numItems - 1) - i]) {
-                    
-                    break;
-                }
-                //Return true if the loop doesn't break 
-                return true;
             }
-        }
-        //Return fals eif the loop does break
-        return false;
-    }
-
-    }
+            }
+                 
+            }
+                   
+             
+             }
+           
   
     /**
      * @param args the command line arguments
