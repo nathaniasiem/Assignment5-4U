@@ -17,28 +17,33 @@ public class ADTList {
     List = new int[10];
     numItems = 0;
 }
-    public void add(int index,int item){
-        //if there is room in the stack
-        if (numItems<List.length){
-            //put item on the stack
-        List[numItems]=item;
-        numItems++;
-        }else{
-            //make more room
-            int[] temp = new int[List.length*2];
-            //copy items over
-            for(int i=0;i<List.length;i++){
-                temp[i]=List[i];
+     public void add(int index, int num) {
+        //at the front of the list 
+        if (index == 0 && num==0) {
+           List[0]=num;
+            //adding at the end of the list
+        }  else if (index<numItems){
+            for (int i = numItems; i > index; i--) {
+                List[i] = List[i - 1];
             }
-            //stack becomes new array
-            List=temp;
-            //add item
-           List[numItems]=item;
-            numItems++;
+            //add the number
+            List[index] = num;
         }
-        
+        //increase item counter
+        numItems++;
+        if (numItems == List.length) {
+            //create new array
+            int[] temp = new int[List.length * 2];
+            //copy contents of original array to new array
+            for (int i = 0; i < List.length; i++) {
+                temp[i] = List[i];
+            }
+            //point towards the new array
+            List = temp;
+        }
     }
- 
+        
+         
     /**
      * @param args the command line arguments
      */
